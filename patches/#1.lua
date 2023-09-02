@@ -1829,7 +1829,7 @@ function library:create(options)
 								library:rippleEffect(keybind['15'], keybind)
 
 								keybind['15'].MouseEnter:Connect(function()
-									if window.pageActive == false then
+									if window.pageActive == true then
 										library:tween(keybind['15'], {BackgroundTransparency = 0})
 										keybind.hover = true
 									end
