@@ -2799,10 +2799,8 @@ function library:create(options)
 										tog:setState(tog.state)
 
 										tog['15'].MouseEnter:Connect(function()
-											if window.pageActive == false then
-												library:tween(tog['15'], {BackgroundTransparency = 0})
-												tog.hover = true
-											end
+											library:tween(tog['15'], {BackgroundTransparency = 0})
+											tog.hover = true
 										end)
 
 										tog['15'].MouseLeave:Connect(function()
@@ -2900,7 +2898,7 @@ function library:create(options)
 								picker['3a6'].Text = b
 								picker['4a6'].Text = RGBToHex(r,g,b)
 
-								options.callback(Color3.new(r, g, b))
+								options.callback(Color3.fromRGB(r, g, b))
 							end
 
 							function picker:setColour(color)
@@ -2963,7 +2961,7 @@ function library:create(options)
 								picker['3a6'].Text = b
 								picker['4a6'].Text = RGBToHex(r,g,b)
 
-								options.callback(Color3.new(r, g, b))
+								options.callback(Color3.fromRGB(r, g, b))
 							end
 
 							do -- logic
@@ -2977,7 +2975,7 @@ function library:create(options)
 									end)
 
 									picker['10'].MouseEnter:Connect(function()
-										if window.pageActive == false then
+										if window.pageActive == true then
 											library:tween(picker['10'], {BackgroundTransparency = 0})
 											picker.hover = true
 										end
@@ -5011,7 +5009,7 @@ function library:create(options)
 							picker['3a6'].Text = b
 							picker['4a6'].Text = RGBToHex(r,g,b)
 
-							options.callback(Color3.new(r, g, b))
+							options.callback(Color3.fromRGB(r, g, b))
 						end
 						
 						function picker:setColour(color)
@@ -5074,7 +5072,7 @@ function library:create(options)
 							picker['3a6'].Text = b
 							picker['4a6'].Text = RGBToHex(r,g,b)
 
-							options.callback(Color3.new(r, g, b))
+							options.callback(Color3.fromRGB(r, g, b))
 						end
 						
 						do -- logic
