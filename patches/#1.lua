@@ -1294,7 +1294,7 @@ function library:create(options)
 
 							do -- render
 								-- Starterslider.MatLib.MainWindow.ElementsContainer.PageSample.SliderSample
-								slider["1c"] = Instance.new("Frame", page["page"]);
+								slider["1c"] = Instance.new("Frame", page["b"]);
 								slider["1c"]["ZIndex"] = 2;
 								slider["1c"]["BorderSizePixel"] = 0;
 								slider["1c"]["BackgroundColor3"] = themeColours.componentBase;
