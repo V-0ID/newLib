@@ -1789,8 +1789,10 @@ function library:create(options)
 							function keybind:_updatenewKeybind()
 								if keybind.keycode == nil then
 									keybind['box'].Text = 'nil'
+									options.callback(keybind.keycode)
 								else
 									keybind['box'].Text = string.split(tostring(keybind.keycode), ".")[3]
+									options.callback(keybind.keycode)
 								end
 							end
 
@@ -1838,12 +1840,6 @@ function library:create(options)
 								keybind['15'].MouseLeave:Connect(function()
 									library:tween(keybind['15'], {BackgroundTransparency = 0.4})
 									keybind.hover = false
-								end)
-
-								uis.InputBegan:Connect(function(input, gpe)
-									if not gpe and input.KeyCode ~= nil and keybind.listening == false and input.KeyCode == keybind.keycode then
-										options.callback()
-									end
 								end)
 
 								uis.InputBegan:Connect(function(input)
@@ -3898,8 +3894,10 @@ function library:create(options)
 						function keybind:_updatenewKeybind()
 							if keybind.keycode == nil then
 								keybind['box'].Text = 'nil'
+								options.callback(keybind.keycode)
 							else
 								keybind['box'].Text = string.split(tostring(keybind.keycode), ".")[3]
+								options.callback(keybind.keycode)
 							end
 						end
 
@@ -3947,12 +3945,6 @@ function library:create(options)
 							keybind['15'].MouseLeave:Connect(function()
 								library:tween(keybind['15'], {BackgroundTransparency = 0.4})
 								keybind.hover = false
-							end)
-							
-							uis.InputBegan:Connect(function(input, gpe)
-								if not gpe and input.KeyCode ~= nil and keybind.listening == false and input.KeyCode == keybind.keycode then
-									options.callback()
-								end
 							end)
 							
 							uis.InputBegan:Connect(function(input)
